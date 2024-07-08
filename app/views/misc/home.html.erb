@@ -9,9 +9,215 @@
   <li id="sfo" class="west">San Francisco</li>
 </ul>
 
+<br>
+
+<div id="bye">Click me</div>
+
+Ruby:
+<br>
+<%= p "Hello World!"%>
+<br>
+<%= p "Your lucky number is #{7*6}"%>
+
+//jQuery - simpler than javascript because of the built-in methods
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 <script>
   // Write your JS here.
   // Open the JS console and refresh the page to see the output.
 
+  console.log("Hello World");
+  console.log(`Your lucky number is ${7*6}`);
   
+  // using variables
+  let name = "Alice";
+  console.log(`Howdy, ${name}`)
+
+  //declaring a constant
+  const aReallyLongVariableNamePi=3.142
+  console.log(`The value of pi is: ${aReallyLongVariableNamePi}`)
+
+  //declaring a function with no input
+  function greet(){
+    console.log("howdy!");
+  }
+
+  greet()
+
+  //declaring a function with an input
+  function greet(name){
+    console.log(`howdy, ${name}`);
+  }
+
+  greet("Alice");
+
+  //Increment value
+  let x=5;
+  x++;
+  console.log(`x is now: ${x}`);
+
+  //for loop
+  for (let i=0; i<6; i++){
+    console.log(i*2);
+  }
+
+  //arrays
+  let fruits = ["apple", "oranges", "cherries"];
+  fruits.forEach(function(fruit){
+    console.log(`I love ${fruit}`);
+  })
+
+console.log(fruits.length);
+console.log(fruits[1]);
+
+//random numbers between on and 1
+let win_probability = Math.random();
+console.log(win_probability);
+
+//integer random numnbers:
+let dice_roll = Math.floor(Math.random() * 6);
+console.log(dice_roll);
+
+//rock-scissors-paper with conditionals
+const moves = ["rock", "scissors", "paper"];
+
+let random_index = Math.floor(Math.random()*3);
+
+let computer_move = moves[random_index];
+
+console.log(`The computer played ${computer_move}.`);
+
+if (computer_move==="rock"){
+  console.log("You tied.");
+} else if (computer_move === "paper") {
+  console.log("You lost.");
+} else {
+  console.log("You won.");
+}
+
+//fizz buzz
+
+for(let i=1; i<101;i++){
+  if ((i%3===0) & (i%5===0)){
+    console.log("fizzbuzz");
+  }
+  else if (i%3 === 0){
+    console.log("fizz");
+  } else if (i%5 === 0) {
+    console.log("buzz");
+  } 
+  else {
+    console.log(i);
+  }
+}
+
+//query by tag
+
+let items = document.getElementsByTagName("li");
+console.log(items);
+
+console.log(document.getElementsByClassName("south"));
+
+console.log(document.getElementById("aus"));
+
+//query by id
+let chi = document.getElementById("ord");
+console.log(chi.innerText);
+
+//manipulate DOM
+chi.style.backgroundColor = "green"; //make the background green
+chi.remove(); // delete this item
+
+list = document.getElementById("cities_list");
+
+list.append(chi) //add chicago to the end of the list
+
+//add border around the cirties in the east one at a time:
+eastItems = document.getElementsByClassName("east");
+
+for (let i = 0; i < eastItems.length; i++) {
+  eastItems[i].style.border = "thin red solid";
+}
+
+//add denver to the start of the list
+let den = document.createElement("li")
+
+let den_text = document.createTextNode("Denver")
+
+den.append(den_text)
+
+den.style.backgroundColor = "orange"
+
+den.className = "west"
+
+den.id = "den"
+
+list.prepend(den)
+
+//jQuery
+
+console.log("This is the start of jQuery")
+
+console.log("Test")
+console.log(jQuery("li"));
+
+$("li");
+
+$(".west");
+
+$("#best");
+
+let chis = $("#ord");
+
+console.log(chis)
+console.log("-------")
+console.log(chis.text());
+
+//DOM manipulation with jQuery
+
+chis.css("background-color", "red");
+
+//remove
+chi.remove();
+
+//put it back
+list = $("#cities_list");
+
+list.append(chi);
+
+//add border to cities in the east
+$(".east").css("border", "thin blue solid");
+
+//toggling
+/*
+chis.fadeOut(5000);
+chis.fadeIn(5000);
+chis.fadeToggle(5000);
+*/
+
+//remove the element after fading
+/*
+chis.fadeToggle(5000, function() {
+  this.remove();
+});
+*/
+
+//add event handler
+
+$("body").on("click", "#bye", function() {
+  $(".west").slideToggle();
+});
+
+//document ready
+  $(document).ready(function() {
+    $("#zebra").on("click", ".giraffe", function() {
+      console.log("clicked!");
+    });
+  });
+
+
 </script>
+
+<div id="zebra">
+  <button class="giraffe">Click!</button>
+</div>
