@@ -2,12 +2,19 @@
 
 Notes:
 
-1. Javascript console is available on Chrome. To access it, open a Chrome browser > View > Developer > Javascript Console. 
-2. Remember to put a semicolon after each command line.
-3. In a html file, write Javascript into a `<script>` tag.  
-4. You only see the print statement in the background when you open the developer console (see #1 to open the console). 
-5. To show the javascript messages, modify the script with the `<script>` tag in the views/misc/home.html.erb file.
-6. String: use back ticks to create strings.
+1. The html file is located within `views/home.html.erb`.
+2. the config/routes.rb is as follows:
+    ```
+    Rails.application.routes.draw do
+      root "misc#home"
+    end
+    ```
+3. Javascript console is available on Chrome. To access it, open a Chrome browser > View > Developer > Javascript Console. 
+4. Remember to put a semicolon after each command line.
+5. In a html file, write Javascript into a `<script>` tag.  
+6. You only see the print statement in the background when you open the developer console (see #1 to open the console). 
+7. To show the javascript messages, modify the script with the `<script>` tag in the views/misc/home.html.erb file.
+8. String: use back ticks to create strings.
 
 Unlike CSS, JavaScript runs asynchronously in the browser, so there’s no guarantee that just because the `<script>` tag appears in the document after the element that the element will have been fully loaded in time for the code within the `<script>` to affect it.
 
